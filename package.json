@@ -16,14 +16,14 @@
     "server": "nodemon dist/server/index.js",
     "start": "npm run server",
     "predebug": "npm run build",
-    "debug": "node --debug-brk dist/server/index.js"
+    "debug": "node --debug-brk dist/server/index.js",
+    "serve": "webpack-dev-server --config=webpack.config.dev.js --history-api-fallback  --inline --hot --progress"
   },
   "license": "MIT",
   "contributors": [
     "Rathi Priya Chandra Sekaran <rathipriya.chandrasekaran@gmail.com>"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/common": "2.0.0-rc.4",
     "@angular/compiler": "2.0.0-rc.4",
@@ -34,19 +34,20 @@
     "@angular/platform-browser-dynamic": "2.0.0-rc.4",
     "@angular/platform-server": "2.0.0-rc.4",
     "@angular/router": "3.0.0-alpha.8",
+    "angular2-template-loader": "^0.4.0",
     "angular2-universal": "~0.104.5",
     "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "copy-webpack-plugin": "^3.0.1",
     "express": "^4.14.0",
+    "html-webpack-plugin": "^2.22.0",
     "methods": "~1.1.2",
+    "nodemon": "^1.9.2",
     "parse5": "^1.5.0",
     "preboot": "^2.1.2",
-    "rxjs": "5.0.0-beta.6",
-
-    "angular2-template-loader": "^0.4.0",
-    "cookie-parser": "^1.4.3",
-    "nodemon": "^1.9.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "rxjs": "5.0.0-beta.6",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.9",

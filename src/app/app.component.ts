@@ -9,13 +9,40 @@ import {Taggle} from "../ng2-taggle";
 @Component({
   selector: "Home",
   template: `
-    <div>Example - 1</div>
+    <div>Example - 1 (Default Theme)</div>
     <ng2-taggle [(tags)]="example1Tags"></ng2-taggle>
+    <BR>
+    <div>Example - 2 (stackoverflow Theme)</div>
+    <ng2-taggle [theme]="'stackoverflow'" [(tags)]="example2Tags"></ng2-taggle>
+    <BR>
+    <div>Example - 3 (delicious Theme)</div>
+    <ng2-taggle [theme]="'delicious'" [(tags)]="example3Tags"></ng2-taggle>
+    <BR>
+    <div>Example - 4 (material Theme)</div>
+    <ng2-taggle [theme]="'material'" [(tags)]="example4Tags"></ng2-taggle>
   `,
   directives: [Taggle]
 })
 export class Home {
   example1Tags: any[] = [
+   {id: 1, name: "ONE"},
+   {id: 2, name: "TWO"},
+   {id: 3, name: "THREE"}
+  ];
+
+  example2Tags: any[] = [
+   {id: 1, name: "ONE"},
+   {id: 2, name: "TWO"},
+   {id: 3, name: "THREE"}
+  ];
+
+  example3Tags: any[] = [
+   {id: 1, name: "ONE"},
+   {id: 2, name: "TWO"},
+   {id: 3, name: "THREE"}
+  ];
+
+  example4Tags: any[] = [
    {id: 1, name: "ONE"},
    {id: 2, name: "TWO"},
    {id: 3, name: "THREE"}
@@ -56,11 +83,7 @@ export class Home {
   `
 })
 export class App {
-  title: string = "ftw";
-  data = {};
-  server: string;
-
-  constructor(public http: Http) { }
+  constructor() { }
 
   ngOnInit() {
   }

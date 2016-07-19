@@ -81,6 +81,7 @@ p a:hover {
   clear: both; }
 
 .taggle_list {
+  margin: 0;
   padding: 0px;
   width: 100%; }
 
@@ -228,7 +229,7 @@ textarea.input {
 .custom.delicious {
   background-image: linear-gradient(to bottom, #eee 1%, #fff 15%);
   border: 1px solid #AAA;
-  min-height: 50px; }
+  min-height: 30px; }
 .custom.delicious.active {
   border-color: #3274D1;
   background-image: linear-gradient(to bottom, #eee 1%, #fff 15%); }
@@ -259,27 +260,33 @@ textarea.input {
 .custom.material {
   background-image: linear-gradient(to bottom, #eee 1%, #fff 15%);
   border: 1px solid #AAA;
-  min-height: 50px; }
+  min-height: 30px; }
 .custom.material.active {
   border-color: #3274D1;
   background-image: linear-gradient(to bottom, #eee 1%, #fff 15%); }
 .custom.material .taggle {
   color: #444;
-  border-radius: 1.5rem;
+  border-radius: 0;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
   background-color: #ddd;
+  font-family: sans-serif;
+  font-size: 0.8rem;
   padding: 5px;
   padding-left: 20px; }
 .custom.material .taggle .close {
-  color: red;
-  font-size: 1.5rem;
-  height: 1rem;
-  width: 1rem;
+  color: #aaa;
+  font-size: 0.9rem;
+  height: 0.7rem;
+  width: 0.7rem;
+  line-height: .1rem;
   margin-top: 3px;
-  line-height: 0.4rem;
   right: auto;
   left: 5px; }
-  .custom.material .taggle .close:hover {
-    color: red; }
+.custom.material .taggle .close:hover {
+  color: #888; }
 
 .custom.stackoverflow {
   border: 1px solid #ccc;
@@ -299,6 +306,6 @@ textarea.input {
   width: 0.7rem;
   line-height: .1rem;
   margin-top: 3px; }
-  .custom.stackoverflow .taggle .close:hover {
-    background: #C03434;
-    color: #fff; }
+.custom.stackoverflow .taggle .close:hover {
+  background: #C03434;
+  color: #fff; }

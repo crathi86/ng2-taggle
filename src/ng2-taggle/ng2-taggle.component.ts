@@ -23,6 +23,8 @@ export class Taggle {
   @ViewChild("placeholder") placeholder;
   @ViewChild("list") list;
 
+  @Input("theme") theme;
+
   @Input("property") tagName = "name";
   @Input("name") field = "tags";
   @Input("tags") _tags: any[] = [];
@@ -58,12 +60,6 @@ export class Taggle {
   }
 
   ngAfterViewInit() {
-    this._on(this.container.nativeElement, "click", this._focusInput.bind(this));
-    this._on(this.list.nativeElement, "click", this._focusInput.bind(this));
-    this._on(this.input.nativeElement, "focus", this._focusInput.bind(this));
-    this._on(this.input.nativeElement, "blur", this._blurEvent.bind(this));
-    this._on(this.input.nativeElement, "keydown", this._keydownEvents.bind(this));
-    this._on(this.input.nativeElement, "keyup", this._keyupEvents.bind(this));
   }
 
   ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
@@ -191,19 +187,6 @@ export class Taggle {
   _setText(el, text) {
        el.textContent = text;
    }
-
-
-  _on(element, eventName, handler) {
-    if (element.addEventListener) {
-        element.addEventListener(eventName, handler, false);
-    }
-    else if (element.attachEvent) {
-        element.attachEvent("on" + eventName, handler);
-    }
-    else {
-        element["on" + eventName] = handler;
-    }
-  }
 
   _fixInputWidth() {
     this._getMeasurements();
@@ -376,7 +359,6 @@ export class Taggle {
     close.innerHTML = "&times;";
     close.className = "close";
     close.type = "button";
-    // this._on(close, "click", this._remove.bind(this, close));
 
     this._setText(span, text);
     span.className = "taggle_text";

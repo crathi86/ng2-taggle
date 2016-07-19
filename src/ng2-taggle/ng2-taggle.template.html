@@ -1,11 +1,15 @@
-<div #container class="input textarea clearfix custom material">
+<div #container (click)="_focusInput()" class="input textarea clearfix custom" [ngClass]="theme">
   <span #placeholder class="taggle_placeholder" style="opacity: 0;">Enter tags...</span>
-    <ul #list class="taggle_list">
+    <ul #list (click)="_focusInput()" class="taggle_list">
       <li *ngFor="let tag of tags; let idx=index" class="taggle" [ngClass]="{'bounce': tag.duplicate}">
         <span class="taggle_text">{{tag.item[tagName]}}</span><button (click)="_remove(idx, $event)" class="close">×</button>
       </li>
       <li>
-        <input #input type="text" class="taggle_input" tabindex="1" style="width: 10px;">
+        <input (focus)="_focusInput()"
+            (blur)="_blurEvent()"
+            (keydown)="_keydownEvents()"
+            (keyup)="_keyupEvents()"
+           #input type="text" class="taggle_input" tabindex="1" style="width: 10px;">
       </li>
     </ul>
     <div #sizer class="taggle_sizer" style="font-size: 16px;"></div>
